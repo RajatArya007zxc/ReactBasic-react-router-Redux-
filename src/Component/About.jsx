@@ -1,5 +1,5 @@
 import React from 'react';
-
+import RainBow from '../HOC/RainBow'
 const About = () => {
     return (
         <div className="container">
@@ -10,4 +10,4 @@ const About = () => {
     );
 }
 
-export default About;
+export default RainBow(About);
