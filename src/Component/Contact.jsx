@@ -9,5 +9,12 @@ const Contact = () => {
         </div>
     );
 }
+/*
+for redirect we can use 
+Contact=(props)=>{
+setTimeOut(()=>{
+    props.history.push('/about')
+},2000)
+} */
 
 export default Contact;
