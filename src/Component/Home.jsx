@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link } from 'react-router-dom';
 
 class Home extends Component {
     constructor(props){
@@ -14,7 +15,24 @@ class Home extends Component {
         .then(r=>this.setState({posts:r
         }))
     }
+    /*
+    const reducedBuildings = [];
+
+fetch(`http://localhost:1001/api/energyprograms/${energyProgramId}/buildings/?results=10`)
+  .then(res => res.json())
+  .then(json => {
+    json.forEach(building => {
+        if (reducedBuildings.length < 10) {
+            reducedBuildings.push(building);
+        }
+    });
+    this.setState({
+      isLoaded: true,
+      buildings: reducedBuildings,
+    })
+  });
     
+    */
     render() {
         const {posts} =this.state;
         const postList =posts.length ?( 
@@ -22,7 +40,11 @@ class Home extends Component {
                 return(
                     <div className="post card" key={post.id}>
                         <div className="card-content">
+
+                            <Link to={'/' + post.id}>
                 <span  className="card-title">{post.title}</span>
+               
+                </Link>
                 <p>{post.body}</p>
                         </div>
                     </div>
